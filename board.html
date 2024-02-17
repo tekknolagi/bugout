@@ -39,7 +39,6 @@ msglist.textContent = "Connecting to " + serveraddress + "...\n(Can take a minut
 document.getElementById("send").onclick = function(ev) {
   var m = document.getElementById("message");
   if (m.value) {
-    msglist.textContent = "Sending message...";
     b.rpc("post", m.value, function () {
       // refreshMessages();
       // server will send refresh message if messages are changed
