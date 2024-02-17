@@ -9,7 +9,7 @@
 <body><pre id="log"></pre></body>
 <script>
   // instantiate our bugout instance with previously saved seed (if any)
-  var b = new Bugout({
+  var b = new Bugout("max", {
     seed: localStorage["bugout-demo-seed"],
     announce: [
       "wss://tracker.openwebtorrent.com",
