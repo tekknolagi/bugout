@@ -74,7 +74,6 @@ function updateWires(count) {
 // utility functions
 
 function refreshMessages() {
-  msglist.textContent = "Refreshing messages...";
   // get a list of the messages
   b.rpc("list", null, function(messages) {
     updateMessagelist(messages);
