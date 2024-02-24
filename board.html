@@ -36,7 +36,7 @@ msglist.textContent = "Connecting to " + serveraddress + "...\n(Can take a minut
 // events
 
 // if the user clicks the send button
-document.getElementById("send").onclick = function(ev) {
+function sendMessage() {
   var m = document.getElementById("message");
   if (m.value) {
     b.rpc("post", m.value, function () {
@@ -44,6 +44,13 @@ document.getElementById("send").onclick = function(ev) {
       // server will send refresh message if messages are changed
     });
     m.value = "";
+  }
+}
+
+document.getElementById("send").onclick = sendMessage;
+document.getElementById("message").onkeyup = function(e) {
+  if (e.key === 'Enter' || e.keyCode === 13) {
+    sendMessage();
   }
 }
 
